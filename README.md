@@ -21,7 +21,36 @@ We provide example parameters and on how to execute the program:
 ```
 python generatorshares.py 2 5 5 original.dat share0.dat share1.dat
 ```
-### Instructions for compiling ABY Framework
+### Instructions for compiling ABY Framework and PP-DaaS
+Make sure that the docker is built. Hence, the following instructions are executed in the Docker image, so that the host system does not require to install packages for executing our program.
+First open bash in the docker image:
+```
+sudo docker run -it -v"${PWD}:/home/osboxes/" pp-daas bash
+```
+Next navigate to the ABY folder:
+```
+cd sfe-policy-eval/ABY
+```
+Then execute cmake to configure the modules :
+```
+mkdir build && cd build
+cmake ..
+```
+Navigate to the root folder and configure the actual program:
+```
+cd ../
+cmake .
+```
+Then execute the 'make' command for executing the makefile to compile the program and generate the executeable:
+```
+make
+```
 ### Instructions for the ABY Server STP
+
+```
+sudo docker run -p 7766:7766  -it -v"${PWD}:/home/osboxes/" sfe bash
+mkdir build && cd build
+
+```
 ### Instructions for the ABY Client DRONE
  
