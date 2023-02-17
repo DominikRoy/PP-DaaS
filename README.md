@@ -50,19 +50,20 @@ Execute following command to run the Docker image and to execute bash commands:
 ```
 sudo docker run -p 7766:7766 -it -v"${PWD}:/home/osboxes/" pp-daas bash
 cd  sfe-policy-eval/
-
 ```
+
 In the Docker image execute following command for the SERVER:
 ```
 ./policy_eval_test -a use the IP address of the docker image,e.g.,172.17.0.3 -r 0
 ```
 ### Instructions for the ABY Client DRONE
+
 Execute following command to run the Docker image and to execute bash commands:
 ```
 sudo docker run -it -v"${PWD}:/home/osboxes/" pp-daas bash
 cd  sfe-policy-eval/
-
 ```
+
 In the Docker image execute following command for the CLIENT:
 ```
 ./policy_eval_test -a use the IP address of the docker image,e.g.,172.17.0.3 -r 1
