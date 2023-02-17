@@ -71,7 +71,7 @@ StringSet split_line(const String& line)
 int32_t simulate(e_role role, const std::string& address, uint16_t port, seclvl seclvl,	uint32_t nvals, uint32_t bitlen, uint32_t nthreads, e_mt_gen_alg mt_alg, e_sharing sharing) {
 
     char *fname = (char *) malloc(150);
-    sprintf(fname, "../ShareGenerator/share%d.dat", role);
+    sprintf(fname, "/home/osboxes/ShareGenerator/share%d.dat", role);
     std::ifstream input(fname);
     int number = 0;
 
@@ -90,10 +90,8 @@ int32_t simulate(e_role role, const std::string& address, uint16_t port, seclvl 
 
                 StringSet parts = split_line(line);
                 String index = parts[0];
-		Query query;
-		if(role == CLIENT){
-                     query = perform_query_parsing((BooleanCircuit *) circ, bitlen, parts[1]);
-		}	
+                Query query = perform_query_parsing((BooleanCircuit *) circ, bitlen, parts[1]);
+			
                 Node* policy = perform_policy_parsing((BooleanCircuit *) circ, bitlen, parts[2]);
 
                 std::cout << "Evaluation started on policy " << number << "..." << std::endl;
@@ -134,7 +132,7 @@ int main(int argc, char** argv) {
 	e_role role;
 	uint32_t bitlen = 32, nvals = 31, secparam = 114, nthreads = 1;
 	uint16_t port = 7766;
-	std::string address = "172.18.0.2";
+	std::string address = "172.17.0.3";
 	int32_t test_op = -1;
 	e_mt_gen_alg mt_alg = MT_PAILLIER;
 
