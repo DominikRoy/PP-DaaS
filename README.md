@@ -1,4 +1,4 @@
-# PP-DaaS
+# Privacy-Preserving Multi-Party Access Control for Third-Party UAV Services
 We provide the implementation for a privacy-preserving multi-party policy evalation tailored for Drone-as-a-Service paradigm.
 The implementation is based from following [Github Repo](https://github.com/I-Stork/sfe-policy-eval).
 
